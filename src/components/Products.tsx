@@ -1,4 +1,7 @@
 import { Wrench, CircleDot, Lock, Square, Link, Grip, Triangle, ScanLine } from 'lucide-react';
+import hingesImg from '@/assets/products-hinges.jpg';
+import nailsImg from '@/assets/products-nails.jpg';
+import boxImg from '@/assets/products-box.jpg';
 
 const Products = () => {
   const products = [
@@ -44,6 +47,12 @@ const Products = () => {
     },
   ];
 
+  const gallery = [
+    { src: hingesImg, alt: 'Dobradiças decorativas em latão e aço com acabamento refinado' },
+    { src: nailsImg, alt: 'Cravos e pregos decorativos em metal para artesanato' },
+    { src: boxImg, alt: 'Caixa de madeira artesanal com ferragens decorativas em latão' },
+  ];
+
   return (
     <section id="produtos" className="section-padding bg-background">
       <div className="container-custom">
@@ -56,6 +65,23 @@ const Products = () => {
             Ferragens para artesanato com tradição e qualidade. Todos os produtos disponíveis em diversos banhos.
           </p>
           <div className="w-24 h-1 bg-accent mx-auto rounded-full mt-6" />
+        </div>
+
+        {/* Gallery */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {gallery.map((item, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-2xl shadow-soft"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          ))}
         </div>
 
         {/* Products Grid */}
