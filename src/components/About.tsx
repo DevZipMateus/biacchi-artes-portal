@@ -1,4 +1,5 @@
 import { Target, Eye, Heart, Award, Users, Lightbulb } from 'lucide-react';
+import aboutImg from '@/assets/about-craftsmanship.jpg';
 
 const About = () => {
   const values = [
@@ -22,7 +23,7 @@ const About = () => {
         </div>
 
         {/* History */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground font-serif">Nossa história</h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -36,9 +37,21 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-card rounded-2xl p-8 shadow-soft">
-            <h3 className="text-2xl font-semibold text-foreground font-serif mb-6">O trevo de quatro folhas</h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+          <div className="relative">
+            <img
+              src={aboutImg}
+              alt="Artesão trabalhando com ferragens de metal em bancada de trabalho"
+              className="rounded-2xl shadow-strong w-full h-auto object-cover"
+            />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent rounded-2xl -z-10" />
+          </div>
+        </div>
+
+        {/* Trevo Story */}
+        <div className="bg-card rounded-2xl p-8 shadow-soft mb-16">
+          <h3 className="text-2xl font-semibold text-foreground font-serif mb-6">O trevo de quatro folhas</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <p className="text-muted-foreground leading-relaxed">
               A dobradiça Trevo de 4 Folhas é estampada em alguns produtos da BiacchiArtes. Segundo a lenda, no ano de 200 a.C., mestres e sacerdotes na Inglaterra e Irlanda consideravam o trevo de quatro folhas sagrado por formar a imagem da Cruz.
             </p>
             <p className="text-muted-foreground leading-relaxed">
