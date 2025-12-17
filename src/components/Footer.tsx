@@ -9,11 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Description */}
           <div>
-            <img
-              src={logo}
-              alt="BIACCHI ARTES EM METAL"
-              className="h-16 w-auto mb-4 brightness-0 invert"
-            />
+          <img
+            src={logo}
+            alt="BIACCHI ARTES EM METAL"
+            className="h-16 w-auto mb-4"
+          />
             <p className="text-background/70 text-sm">
               Tradição e qualidade em ferragens para artesanato desde 1988.
             </p>
