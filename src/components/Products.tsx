@@ -57,27 +57,27 @@ const Products = () => {
     <section id="produtos" className="section-padding bg-background">
       <div className="container-custom">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground font-serif mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground font-serif mb-3 sm:mb-4">
             Nossos produtos
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2">
             Ferragens para artesanato com tradição e qualidade. Todos os produtos disponíveis em diversos banhos.
           </p>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full mt-6" />
+          <div className="w-20 sm:w-24 h-1 bg-accent mx-auto rounded-full mt-4 sm:mt-6" />
         </div>
 
         {/* Gallery */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
           {gallery.map((item, index) => (
             <div
               key={index}
-              className="relative group overflow-hidden rounded-2xl shadow-soft"
+              className="relative group overflow-hidden rounded-xl sm:rounded-2xl shadow-soft"
             >
               <img
                 src={item.src}
                 alt={item.alt}
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
@@ -85,19 +85,19 @@ const Products = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-10 sm:mb-12">
           {products.map((product) => (
             <div
               key={product.name}
-              className="group bg-card border border-border rounded-2xl p-6 hover-lift cursor-pointer"
+              className="group bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover-lift cursor-pointer"
             >
-              <div className="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent transition-colors duration-300">
-                <product.icon className="w-7 h-7 text-accent-foreground" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-accent/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent transition-colors duration-300">
+                <product.icon className="w-5 h-5 sm:w-7 sm:h-7 text-accent-foreground" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground font-serif mb-2">
+              <h3 className="text-sm sm:text-lg font-semibold text-foreground font-serif mb-1 sm:mb-2">
                 {product.name}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3">
                 {product.description}
               </p>
             </div>
@@ -105,43 +105,43 @@ const Products = () => {
         </div>
 
         {/* Materials Info */}
-        <div className="bg-secondary rounded-2xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8">
+        <div className="bg-secondary rounded-xl sm:rounded-2xl p-5 sm:p-8 md:p-12">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <div>
-              <h3 className="text-xl font-semibold text-foreground font-serif mb-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground font-serif mb-3 sm:mb-4">
                 Materiais disponíveis
               </h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="text-muted-foreground">Aço com diversos banhos</span>
+              <ul className="space-y-2 sm:space-y-3">
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Aço com diversos banhos</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="text-muted-foreground">Latão com acabamentos variados</span>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Latão com acabamentos variados</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span className="text-muted-foreground">Zamak (pezinhos egípcios)</span>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Zamak (pezinhos egípcios)</span>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold text-foreground font-serif mb-4">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground font-serif mb-3 sm:mb-4">
                 Diferenciais
               </h3>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="text-muted-foreground">Qualidade comprovada desde 1988</span>
+              <ul className="space-y-2 sm:space-y-3">
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Qualidade comprovada desde 1988</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="text-muted-foreground">Produtos originais e exclusivos</span>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Produtos originais e exclusivos</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span className="text-muted-foreground">Entrega para todo o Brasil e exterior</span>
+                <li className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0" />
+                  <span className="text-sm sm:text-base text-muted-foreground">Entrega para todo o Brasil e exterior</span>
                 </li>
               </ul>
             </div>
