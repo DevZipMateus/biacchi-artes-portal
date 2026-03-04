@@ -1,50 +1,56 @@
-import { Wrench, CircleDot, Lock, Square, Link, Grip, Triangle, ScanLine } from 'lucide-react';
 import dobradicaTrevoImg from '@/assets/dobradica-trevo.png';
 import hingesImg from '@/assets/products-hinges.jpg';
 import nailsImg from '@/assets/products-nails.jpg';
 import boxImg from '@/assets/products-box.jpg';
+import cravosImg from '@/assets/product-cravos.png';
+import dobradicasImg from '@/assets/product-dobradicas.png';
+import fechosImg from '@/assets/product-fechos.png';
+import cantoneirasImg from '@/assets/product-cantoneiras.png';
+import correntesImg from '@/assets/product-correntes.png';
+import gramposImg from '@/assets/product-grampos.png';
+import parafusosImg from '@/assets/product-parafusos.png';
 
 const Products = () => {
   const products = [
     {
-      icon: CircleDot,
       name: 'Cravos',
       description: 'Cravos em aço e latão com diversos banhos para acabamento perfeito.',
+      image: cravosImg,
     },
     {
-      icon: Square,
       name: 'Dobradiças',
       description: 'Dobradiças especiais em aço e latão, incluindo a exclusiva Trevo de 4 Folhas.',
+      image: dobradicaTrevoImg,
     },
     {
-      icon: Lock,
       name: 'Fechos',
       description: 'Fechos de qualidade em aço e latão com variados acabamentos.',
+      image: fechosImg,
     },
     {
-      icon: Wrench,
       name: 'Prego Balmaz',
       description: 'Pregos Balmaz tradicionais em aço e latão para artesanato.',
+      image: gramposImg,
     },
     {
-      icon: Triangle,
       name: 'Cantoneiras',
       description: 'Cantoneiras em aço para proteção e acabamento de cantos.',
+      image: cantoneirasImg,
     },
     {
-      icon: Link,
       name: 'Correntes',
       description: 'Correntes decorativas em aço para diversos projetos artesanais.',
+      image: correntesImg,
     },
     {
-      icon: Grip,
       name: 'Grampos',
       description: 'Grampos em aço de alta qualidade para fixações seguras.',
+      image: gramposImg,
     },
     {
-      icon: ScanLine,
       name: 'Ponteiras e parafusos',
       description: 'Ponteiras, parafusos em aço e pezinhos egípcios em zamak.',
+      image: parafusosImg,
     },
   ];
 
@@ -90,26 +96,15 @@ const Products = () => {
           {products.map((product) => (
             <div
               key={product.name}
-              className={`group relative overflow-hidden border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover-lift cursor-pointer ${
-                product.name === 'Dobradiças' ? 'bg-cover bg-center' : 'bg-card'
-              }`}
-              style={product.name === 'Dobradiças' ? { backgroundImage: `url(${dobradicaTrevoImg})` } : undefined}
+              className="group relative overflow-hidden border border-border rounded-xl sm:rounded-2xl hover-lift cursor-pointer bg-cover bg-center"
+              style={{ backgroundImage: `url(${product.image})` }}
             >
-              {product.name === 'Dobradiças' && (
-                <div className="absolute inset-0 bg-foreground/60 rounded-xl sm:rounded-2xl" />
-              )}
-              <div className="relative z-10">
-                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-accent/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent transition-colors duration-300">
-                  <product.icon className="w-5 h-5 sm:w-7 sm:h-7 text-accent-foreground" />
-                </div>
-                <h3 className={`text-sm sm:text-lg font-semibold font-serif mb-1 sm:mb-2 ${
-                  product.name === 'Dobradiças' ? 'text-white' : 'text-foreground'
-                }`}>
+              <div className="absolute inset-0 bg-foreground/50 group-hover:bg-foreground/60 transition-colors duration-300 rounded-xl sm:rounded-2xl" />
+              <div className="relative z-10 p-4 sm:p-6">
+                <h3 className="text-sm sm:text-lg font-semibold font-serif mb-1 sm:mb-2 text-white">
                   {product.name}
                 </h3>
-                <p className={`text-xs sm:text-sm line-clamp-3 ${
-                  product.name === 'Dobradiças' ? 'text-white/80' : 'text-muted-foreground'
-                }`}>
+                <p className="text-xs sm:text-sm line-clamp-3 text-white/80">
                   {product.description}
                 </p>
               </div>
