@@ -1,4 +1,5 @@
 import { Wrench, CircleDot, Lock, Square, Link, Grip, Triangle, ScanLine } from 'lucide-react';
+import dobradicaTrevoImg from '@/assets/dobradica-trevo.png';
 import hingesImg from '@/assets/products-hinges.jpg';
 import nailsImg from '@/assets/products-nails.jpg';
 import boxImg from '@/assets/products-box.jpg';
