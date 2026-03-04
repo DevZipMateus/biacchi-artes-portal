@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroBg from '@/assets/products-box.jpg';
 
 const Hero = () => {
   return (
