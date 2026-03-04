@@ -1,5 +1,7 @@
 import { Target, Eye, Heart, Award, Users, Lightbulb } from 'lucide-react';
-import aboutImg from '@/assets/about-craftsmanship.jpg';
+import trevo1 from '@/assets/product-dobradica-trevo-1.png';
+import trevo2 from '@/assets/product-dobradica-trevo-2.png';
+import trevo3 from '@/assets/product-dobradica-trevo-3.png';
 
 const About = () => {
   const values = [
@@ -25,7 +27,7 @@ const About = () => {
         {/* History */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-10 sm:mb-16 items-center">
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-            <h3 className="text-xl sm:text-2xl font-semibold text-foreground font-serif">Nossa história</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold text-foreground font-serif">Tradição e Excelência em cada detalhe</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Nascida em 06 de março de 2015, a BiacchiArtes em Metal tem sua origem na antiga BassaniArtes em Metal, fundada em 1988 para dar continuidade a uma linha de produtos que antes faziam parte da Metalúrgica Eberle.
             </p>
@@ -38,11 +40,24 @@ const About = () => {
           </div>
           
           <div className="relative order-1 lg:order-2">
-            <img
-              src={aboutImg}
-              alt="Artesão trabalhando com ferragens de metal em bancada de trabalho"
-              className="rounded-xl sm:rounded-2xl shadow-strong w-full h-auto object-cover"
-            />
+            {/* Dobradiça Trevo Collage */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <img
+                src={trevo1}
+                alt="Dobradiça Trevo de 4 Folhas - vista frontal"
+                className="rounded-xl sm:rounded-2xl shadow-strong w-full h-auto object-cover col-span-2"
+              />
+              <img
+                src={trevo2}
+                alt="Dobradiças Trevo de 4 Folhas - conjunto"
+                className="rounded-xl sm:rounded-2xl shadow-strong w-full h-auto object-cover"
+              />
+              <img
+                src={trevo3}
+                alt="Dobradiça Trevo de 4 Folhas - detalhe"
+                className="rounded-xl sm:rounded-2xl shadow-strong w-full h-auto object-cover"
+              />
+            </div>
             <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-accent rounded-xl sm:rounded-2xl -z-10 hidden sm:block" />
           </div>
         </div>

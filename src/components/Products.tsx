@@ -1,6 +1,4 @@
 import dobradicaTrevoImg from '@/assets/dobradica-trevo.png';
-import hingesImg from '@/assets/products-hinges.jpg';
-import nailsImg from '@/assets/products-nails.jpg';
 import boxImg from '@/assets/products-box.jpg';
 import cravosImg from '@/assets/product-cravos.png';
 import dobradicasImg from '@/assets/product-dobradicas.png';
@@ -9,6 +7,9 @@ import cantoneirasImg from '@/assets/product-cantoneiras.png';
 import correntesImg from '@/assets/product-correntes.png';
 import gramposImg from '@/assets/product-grampos.png';
 import parafusosImg from '@/assets/product-parafusos.png';
+import pregoBalmazImg from '@/assets/product-prego-balmaz.png';
+import ponteirasImg from '@/assets/product-ponteiras.png';
+import pezinhosImg from '@/assets/product-pezinhos-egipcios.png';
 
 const Products = () => {
   const products = [
@@ -30,7 +31,7 @@ const Products = () => {
     {
       name: 'Prego Balmaz',
       description: 'Pregos Balmaz tradicionais em aço e latão para artesanato.',
-      image: gramposImg,
+      image: pregoBalmazImg,
     },
     {
       name: 'Cantoneiras',
@@ -48,15 +49,25 @@ const Products = () => {
       image: gramposImg,
     },
     {
-      name: 'Ponteiras e parafusos',
-      description: 'Ponteiras, parafusos em aço e pezinhos egípcios em zamak.',
+      name: 'Ponteiras',
+      description: 'Ponteiras decorativas em aço e latão para acabamento de projetos.',
+      image: ponteirasImg,
+    },
+    {
+      name: 'Parafusos',
+      description: 'Parafusos em aço e latão para fixações em artesanato.',
       image: parafusosImg,
+    },
+    {
+      name: 'Pezinhos Egípcios',
+      description: 'Pezinhos egípcios em zamak com acabamento refinado.',
+      image: pezinhosImg,
     },
   ];
 
   const gallery = [
-    { src: hingesImg, alt: 'Dobradiças decorativas em latão e aço com acabamento refinado' },
-    { src: nailsImg, alt: 'Cravos e pregos decorativos em metal para artesanato' },
+    { src: dobradicasImg, alt: 'Dobradiças decorativas em latão e aço com acabamento refinado' },
+    { src: cravosImg, alt: 'Cravos e pregos decorativos em metal para artesanato' },
     { src: boxImg, alt: 'Caixa de madeira artesanal com ferragens decorativas em latão' },
   ];
 
@@ -92,19 +103,19 @@ const Products = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-10 sm:mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 mb-10 sm:mb-12">
           {products.map((product) => (
             <div
               key={product.name}
-              className="group relative overflow-hidden border border-border rounded-xl sm:rounded-2xl hover-lift cursor-pointer bg-cover bg-center"
+              className="group relative overflow-hidden border border-border rounded-xl sm:rounded-2xl hover-lift cursor-pointer bg-cover bg-center aspect-square"
               style={{ backgroundImage: `url(${product.image})` }}
             >
-              <div className="absolute inset-0 bg-foreground/50 group-hover:bg-foreground/60 transition-colors duration-300 rounded-xl sm:rounded-2xl" />
-              <div className="relative z-10 p-4 sm:p-6">
-                <h3 className="text-sm sm:text-lg font-semibold font-serif mb-1 sm:mb-2 text-white">
+              <div className="absolute inset-0 bg-foreground/40 group-hover:bg-foreground/60 transition-colors duration-300 rounded-xl sm:rounded-2xl" />
+              <div className="relative z-10 p-3 sm:p-4 flex flex-col justify-end h-full">
+                <h3 className="text-sm sm:text-base font-semibold font-serif text-white">
                   {product.name}
                 </h3>
-                <p className="text-xs sm:text-sm line-clamp-3 text-white/80">
+                <p className="text-[10px] sm:text-xs line-clamp-2 text-white/80 mt-1">
                   {product.description}
                 </p>
               </div>
