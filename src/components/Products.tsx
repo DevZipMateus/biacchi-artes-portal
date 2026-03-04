@@ -1,4 +1,5 @@
 import { Wrench, CircleDot, Lock, Square, Link, Grip, Triangle, ScanLine } from 'lucide-react';
+import dobradicaTrevoImg from '@/assets/dobradica-trevo.png';
 import hingesImg from '@/assets/products-hinges.jpg';
 import nailsImg from '@/assets/products-nails.jpg';
 import boxImg from '@/assets/products-box.jpg';
@@ -89,17 +90,29 @@ const Products = () => {
           {products.map((product) => (
             <div
               key={product.name}
-              className="group bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover-lift cursor-pointer"
+              className={`group relative overflow-hidden border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover-lift cursor-pointer ${
+                product.name === 'Dobradiças' ? 'bg-cover bg-center' : 'bg-card'
+              }`}
+              style={product.name === 'Dobradiças' ? { backgroundImage: `url(${dobradicaTrevoImg})` } : undefined}
             >
-              <div className="w-10 h-10 sm:w-14 sm:h-14 bg-accent/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent transition-colors duration-300">
-                <product.icon className="w-5 h-5 sm:w-7 sm:h-7 text-accent-foreground" />
+              {product.name === 'Dobradiças' && (
+                <div className="absolute inset-0 bg-foreground/60 rounded-xl sm:rounded-2xl" />
+              )}
+              <div className="relative z-10">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 bg-accent/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-accent transition-colors duration-300">
+                  <product.icon className="w-5 h-5 sm:w-7 sm:h-7 text-accent-foreground" />
+                </div>
+                <h3 className={`text-sm sm:text-lg font-semibold font-serif mb-1 sm:mb-2 ${
+                  product.name === 'Dobradiças' ? 'text-white' : 'text-foreground'
+                }`}>
+                  {product.name}
+                </h3>
+                <p className={`text-xs sm:text-sm line-clamp-3 ${
+                  product.name === 'Dobradiças' ? 'text-white/80' : 'text-muted-foreground'
+                }`}>
+                  {product.description}
+                </p>
               </div>
-              <h3 className="text-sm sm:text-lg font-semibold text-foreground font-serif mb-1 sm:mb-2">
-                {product.name}
-              </h3>
-              <p className="text-xs sm:text-sm text-muted-foreground line-clamp-3">
-                {product.description}
-              </p>
             </div>
           ))}
         </div>
